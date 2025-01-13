@@ -50,7 +50,15 @@ sum(profit) as Total_profit
 from `order details`
 group by`Sub Category`
 order by Total_profit desc
-limit 10;
+limit 5;
+
+-- LEAST PERFORMING SUB-CATEGORIES
+select `Sub Category`,
+sum(profit) as Total_profit
+from `order details`
+group by`Sub Category`
+order by Total_profit asc
+limit 5;
 
 -- LEAST PERFORMING CITY
 select city,
@@ -58,4 +66,17 @@ count(`Order ID`) as Total_profit
 from `list of orders`
 group by city
 order by Total_profit asc
-limit 10;
+limit 5;
+
+
+-- TOP PERFORMING CITY
+select city,
+count(`Order ID`) as Total_profit
+from `list of orders`
+group by city
+order by Total_profit desc
+limit 5;
+
+select count(`Employee ID`) as 
+total_employee
+from employees_england;
